@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     const callbackBtn = document.querySelector('#top-callback'),
           callBackModalWindow = document.querySelector('#callback'),
-          body = document.querySelector('body');
+          overlay = document.querySelector('.modal-overlay');
 
          // popupForm = popupWindow.querySelector('#form3');
 
@@ -42,8 +42,10 @@ window.addEventListener('DOMContentLoaded', function() {
         function opacityChanger() {
           if(displayValue === 'block') {
             callBackModalWindow.style.display = displayValue;
+            overlay.style.display = displayValue;
             opacity += 10;
             callBackModalWindow.style.opacity = `${opacity}%`;
+            overlay.style.opacity = `${opacity}%`;
             if (opacity < 100) {
                 initiateTimeOut(); 
             }
@@ -51,10 +53,12 @@ window.addEventListener('DOMContentLoaded', function() {
           } else {
             opacity -= 10;
             callBackModalWindow.style.opacity = `${opacity}%`;
+            overlay.style.opacity = `${opacity}%`;
             if (opacity > 0) {
                 initiateTimeOut(); 
             } else {
               callBackModalWindow.style.display = displayValue;
+              overlay.style.display = displayValue;
             }
           } 
         }
@@ -91,7 +95,7 @@ window.addEventListener('DOMContentLoaded', function() {
       }
       });
 
-      body.addEventListener('click', (event)=>{
+      overlay.addEventListener('click', (event)=>{
         console.log("tut");
           let target = event.target;
           target = target.closest('#callback');
