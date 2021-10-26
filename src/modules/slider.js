@@ -32,9 +32,6 @@ const slider = () => {
       clearInterval(interval);
     };
 
-    slider.addEventListener('mouseout', (event) => {
-        startSlide();
-    });
     startSlide();
   };
 

@@ -11,8 +11,10 @@
 
       const popAnimation = function (opacity, displayValue){
         callBackModalWindow.style.opacity = `${opacity}%`;
-        const phoneBox = document.querySelector('.tel');
+        const phoneBox = document.querySelector('.tel'),
+              nameBox = document.querySelector('.fio');
         phoneBox.style.border = '2px solid #E3E3E4';
+        nameBox.style.border = '2px solid #E3E3E4';
         function initiateTimeOut() {
           setTimeout(function() { opacityChanger();}, 50);
         }

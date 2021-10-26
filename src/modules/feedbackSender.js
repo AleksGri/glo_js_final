@@ -77,13 +77,21 @@ const feedbackSender = () =>{
 
     formCallback.addEventListener('submit', (event)=>{
       event.preventDefault();
-      const phoneBox = event.target.children[1].children[0],
+      const nameBox = event.target.children[0].children[0],
+            phoneBox = event.target.children[1].children[0],
             element = event.target;
+
+      nameBox.style.border = '2px solid #E3E3E4';
       phoneBox.style.border = '2px solid #E3E3E4';
+      if(nameBox.value === '') {
+        nameBox.style.border = 'solid 2px red';
+        return;
+      }
       if(phoneBox.value === '') {
         phoneBox.style.border = 'solid 2px red';
         return;
       }
+      
       
       formSender(event, element);
     });
