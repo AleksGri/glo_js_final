@@ -1,11 +1,8 @@
   const togglePopup = () => {
 
-    const callbackBtn = document.querySelector('#top-callback'),
-          buttonServices = document.querySelector('.button-services'),
+    const buttons = document.querySelectorAll('.fancyboxModal'),
           callBackModalWindow = document.querySelector('#callback'),
-          overlay = document.querySelector('.modal-overlay'),
-          modalWindowShowButton = [callbackBtn, buttonServices];
-
+          overlay = document.querySelector('.modal-overlay');
 
     const popupHendler = function() {
 
@@ -61,7 +58,7 @@
     };
 
 
-    modalWindowShowButton.forEach((button)=>{
+    buttons.forEach((button)=>{
       
       button.addEventListener('click', ()=>{
         popupHendler();
